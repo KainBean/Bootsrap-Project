@@ -1,0 +1,153 @@
+/* styles.css */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000000; /* Set a solid black background */
+  }
+  
+  .login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .social-login {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .social-login-btn {
+    padding: 10px 20px;
+    background-color: #4267B2;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .social-login-btn:hover {
+    background-color: #3B5998;
+  }
+  
+  .password-reset {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .password-reset a {
+    color: #337ab7;
+    text-decoration: none;
+    margin: 5px;
+  }
+  
+  .password-reset a:hover {
+    text-decoration: underline;
+    margin: 5px;
+  }
+  
+  .captcha {
+    margin-top: 20px;
+    /* Add your custom styles for CAPTCHA container */
+  }
+  
+  #error-message {
+    display: none;
+    color: #ff0000;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  
+  /* Add psychedelic background effect */
+  @keyframes psychedelic {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.register-form button:hover {
+  background-color: #45a049;
+}
+  body {
+    animation: psychedelic 10s ease infinite;
+    background: linear-gradient(
+      -45deg,
+    #ff00a9,
+    #e100ff,
+    #ad00ff,
+    #7f00ff,
+    #3d00ff,
+    #0032ff,
+    #00bfff,
+    #00ffdc,
+    #00ff91,
+    #b1ff00,
+    #ffe600,
+    #ffba00,
+    #ff7f00,
+    #ff4000,
+    #ff0000
+    );
+    background-size: 800% 800%;
+  }
