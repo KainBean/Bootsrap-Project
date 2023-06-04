@@ -1,0 +1,96 @@
+.registration-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registration-form input[type="text"],
+  .registration-form input[type="email"],
+  .registration-form input[type="password"],
+  .registration-form input[type="date"],
+  .registration-form input[type="tel"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .password-strength-meter {
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #eee;
+  }
+  
+  .terms-and-conditions {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .terms-and-conditions input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add more styles as needed */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000000; /* Set a solid black background */
+  }  
+  body {
+    animation: psychedelic 10s ease infinite;
+    background: linear-gradient(
+      -45deg,
+    #ff00a9,
+    #e100ff,
+    #ad00ff,
+    #7f00ff,
+    #3d00ff,
+    #0032ff,
+    #00bfff,
+    #00ffdc,
+    #00ff91,
+    #b1ff00,
+    #ffe600,
+    #ffba00,
+    #ff7f00,
+    #ff4000,
+    #ff0000
+    );
+    background-size: 800% 800%;
+  }
+    /* Add psychedelic background effect */
+    @keyframes psychedelic {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
