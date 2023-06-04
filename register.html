@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Registration</title>
+</head>
+<body>
+    <form class="registration-form" onsubmit="return validateForm()">
+        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <script>
+        function validateForm() {
+          var username = document.querySelector('input[type="text"]').value;
+          var email = document.querySelector('input[type="email"]').value;
+          var password = document.querySelector('input[type="password"]').value;
+          var confirmPassword = document.querySelectorAll('input[type="password"]')[1].value;
+        
+          // Perform your validation checks here
+          if (username.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
+            alert('Please fill in all fields');
+            return false;
+          }
+        
+          if (password !== confirmPassword) {
+            alert('Passwords do not match');
+            return false;
+          }
+        
+          // If the validation passes, you can proceed with registration
+          alert('Registration successful!');
+          
+          // Redirect to the home page
+          window.location.href = "home.html";
+          
+          return true;
+        }
+        </script>        
+              
+</body>
+</html>

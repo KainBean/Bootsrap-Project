@@ -6,26 +6,40 @@
   <link rel="stylesheet" href="script.js">
 </head>
 <body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form class="login-form" onsubmit="return validateForm()">
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <label>
-        <input type="checkbox" name="remember"> Remember Me
-      </label>
-      <button type="submit">Log In</button>
-      <div id="error-message" style="display: none;"></div>
-    </form>
-    <div class="password-reset">
-      <a href="#">Forgot Password?</a>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form class="login-form" onsubmit="return validateForm()" id="loginForm">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <label>
+          <input type="checkbox" name="remember"> Remember Me
+        </label>
+        <button type="submit">Log In</button>
+        <div id="error-message" style="display: none;"></div>
+      </form>
+      <div class="password-reset">
+        <a href="#">Forgot Password?</a>
+      </div>
+      <div class="register-option">
+        Don't have an account? <a href="register.html">Register</a>
+      </div>
+      <div class="captcha">
+        <!-- CAPTCHA implementation goes here -->
+      </div>
     </div>
-    <div class="register-option">
-      Don't have an account? <a href="register.html">Register</a>
-    </div>
-    <div class="captcha">
-      <!-- CAPTCHA implementation goes here -->
-    </div>
-  </div>
-</body>
+  
+    <script>
+      function validateForm() {
+        // Perform form validation here if needed
+        // ...
+  
+        // Redirect to the home page
+        window.location.href = "home.html";
+        
+        // Prevent the form from submitting (since we're redirecting manually)
+        return false;
+      }
+    </script>
+  </body>
+  
 </html>
