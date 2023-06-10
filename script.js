@@ -51,3 +51,17 @@ function addEvent() {
 
 // Add event listener to the "Add" button
 document.getElementById("add_event").addEventListener("click", addEvent);
+
+// Get the user's name
+var userName = prompt("Enter your name:");
+
+// Update the user name in the calendar header
+document.getElementById('user_name').textContent = userName;
+
+// Add JavaScript to toggle the active class on the navbar
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+
+hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+});

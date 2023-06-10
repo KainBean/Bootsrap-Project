@@ -14,8 +14,20 @@
         <div class="logo">
           <img src="Captura de pantalla 2023-06-04 a las 15.48.12.png" alt="Your App Logo">
         </div>
-        <nav>
-          <ul>
+        <section class="banner">
+          <video src="system_-_697 (720p).mp4" autoplay muted loop></video>
+          <div class="overlay">
+            <h1>Connect, Network, and Thrive!</h1>
+          </div>
+        </section>
+        
+        <nav class="navbar">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="menu">
             <li><a href="home.html">Home</a></li>
             <li><a href="#">Matches</a></li>
             <li><a href="#">Recommendations</a></li>
@@ -27,21 +39,19 @@
             <li><a href="#">Follow-ups</a></li>
             <li><a href="#">Analytics</a></li>
           </ul>
+          <div class="overlay"></div>
         </nav>
+        
+        
     </header>
-    <section class="banner">
-        <video src="system_-_697 (720p).mp4" autoplay muted loop></video>
-        <div class="overlay">
-          <h1>Connect, Network, and Thrive!</h1>
-        </div>
-    </section>
+  
 
     <div class="container">
-        <div class="calendar light">
-          <div class="calendar_header">
-            <h1 class="header_title">Welcome Back</h1>
-            <p class="header_copy">Calendar Plan</p>
-          </div>
+      <div class="calendar light">
+        <div class="calendar_header">
+          <h1 class="header_title">Welcome Back, <span id="user_name"></span></h1>
+          <p class="header_copy">Daily Plan</p>
+        </div>
           <div class="calendar_plan">
             <div class="cl_plan">
               <div class="cl_title">Today</div>

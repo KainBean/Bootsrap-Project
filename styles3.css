@@ -9,22 +9,72 @@ header {
 }
 
 .logo img {
-  width: 100px; /* Adjust the size as needed */
+  width: 200px; /* Adjust the size as needed */
+}
+.navbar {
+  position: relative;
+  background: #333;
+  color: #fff;
 }
 
-nav ul {
-  list-style-type: none;
-  display: flex;
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
 }
 
-nav ul li {
-  margin-right: 15px;
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin-bottom: 5px;
 }
 
-nav ul li a {
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Start with the menu off-screen */
+  width: 250px;
+  height: 100vh;
+  padding: 20px;
+  background: #12b9ea;
+  transition: left 0.3s ease;
+}
+
+.menu li {
+  margin-bottom: 15px;
+}
+
+.menu li a {
+  color: #fff;
   text-decoration: none;
-  color: #333;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Add styles to show the menu and overlay when the hamburger is clicked */
+.navbar.active .menu {
+  left: 0;
+}
+
+.navbar.active .overlay {
+  z-index: 1;
+  opacity: 1;
+  pointer-events: auto;
+}
+
 
 .banner {
   position: relative;
