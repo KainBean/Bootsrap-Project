@@ -10,6 +10,7 @@ header {
 
 .logo img {
   width: 200px; /* Adjust the size as needed */
+  padding: 100px;
 }
 .navbar {
   position: relative;
@@ -178,7 +179,7 @@ body {
 }
 
 .calendar_events {
-  color: #A39D9E;
+  color: #12b9ea;
 }
 
 .ce_title {
@@ -202,7 +203,7 @@ body {
 
 .event_item:hover .ei_Copy,
 .event_item:hover .ei_Title {
-  color: #fff;
+  color: #f33fa5;
 }
 
 .ei_Dot,
