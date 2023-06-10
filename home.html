@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles3.css">
-    <link rel="stylesheet" href="fullcalendar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <title>MainPage</title>
 </head>
@@ -28,15 +28,38 @@
             <li><a href="#">Analytics</a></li>
           </ul>
         </nav>
-      </header>
-      <section class="banner">
+    </header>
+    <section class="banner">
         <video src="system_-_697 (720p).mp4" autoplay muted loop></video>
         <div class="overlay">
           <h1>Connect, Network, and Thrive!</h1>
         </div>
-      </section>
+    </section>
 
-    
+    <div class="container">
+        <div class="calendar light">
+          <div class="calendar_header">
+            <h1 class="header_title">Welcome Back</h1>
+            <p class="header_copy">Calendar Plan</p>
+          </div>
+          <div class="calendar_plan">
+            <div class="cl_plan">
+              <div class="cl_title">Today</div>
+              <div class="cl_copy" id="current_date"></div>
+              <div class="cl_add">
+                <i class="fas fa-plus" id="add_event"></i>
+              </div>
+            </div>
+          </div>
+          <div class="calendar_events">
+            <p class="ce_title">Upcoming Events</p>
+            <div id="event_list">
+              <!-- Existing events will be dynamically added here -->
+            </div>
+          </div>
+        </div>
+    </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
