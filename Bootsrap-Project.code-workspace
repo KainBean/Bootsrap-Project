@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Bootsrap-Project",
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#571901",
+			"titleBar.activeBackground": "#792201",
+			"titleBar.activeForeground": "#FFF9F7"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "Bootsrap-Project"
+	}
+}
