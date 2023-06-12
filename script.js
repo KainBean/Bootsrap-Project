@@ -1,10 +1,35 @@
- // Get current date and format it
- var today = new Date();
- var options = { year: 'numeric', month: 'long', day: 'numeric' };
- var formattedDate = today.toLocaleDateString(undefined, options);
- document.getElementById('current_date').textContent = formattedDate;
+// JavaScript code for dropdown functionality
+function toggleDropdown(event) {
+  event.preventDefault();
+  var dropdown = event.target.parentNode.querySelector(".dropdown-content");
+  dropdown.classList.toggle("show");
+}
 
- // Function to create the delete button element
+function closeDropdowns() {
+  var dropdowns = document.querySelectorAll(".dropdown-content");
+  dropdowns.forEach(function(dropdown) {
+    dropdown.classList.remove("show");
+  });
+}
+
+window.addEventListener("DOMContentLoaded", function() {
+  var moreLink = document.querySelector(".dropdown-toggle");
+  var dropdown = document.querySelector(".dropdown-content");
+
+  moreLink.addEventListener("click", toggleDropdown);
+  document.addEventListener("click", function(event) {
+    if (!event.target.matches(".dropdown-toggle") && !event.target.closest(".dropdown-content")) {
+      closeDropdowns();
+    }
+  });
+});
+// Get current date and format it
+var today = new Date();
+var options = { year: 'numeric', month: 'long', day: 'numeric' };
+var formattedDate = today.toLocaleDateString(undefined, options);
+document.getElementById('current_date').textContent = formattedDate;
+
+// Function to create the delete button element
 function createDeleteButton(eventItem) {
   var deleteButton = document.createElement("button");
   deleteButton.classList.add("delete_button");
@@ -30,38 +55,79 @@ function addEvent() {
     dot.classList.add("ei_Dot");
     eventItem.appendChild(dot);
 
+    var eventContent = document.createElement("div");
+    eventContent.classList.add("ei_Content");
+    eventItem.appendChild(eventContent);
+
     var eventTitle = document.createElement("div");
     eventTitle.classList.add("ei_Title");
-    eventTitle.textContent = time;
-    eventItem.appendChild(eventTitle);
+    eventTitle.textContent = title;
+    eventContent.appendChild(eventTitle);
+
+    var eventTime = document.createElement("div");
+    eventTime.classList.add("ei_Time");
+    eventTime.innerHTML = "<span>" + time + "</span>";
+    eventContent.appendChild(eventTime);
 
     var eventCopy = document.createElement("div");
     eventCopy.classList.add("ei_Copy");
     eventCopy.textContent = copy;
-    eventItem.appendChild(eventCopy);
+    eventContent.appendChild(eventCopy);
 
-    // Create delete button and append it to the event item
     var deleteButton = createDeleteButton(eventItem);
     eventItem.appendChild(deleteButton);
 
-    // Append the new event to the event list
-    document.getElementById("event_list").appendChild(eventItem);
+    // Append the event to the event list
+    var eventList = document.getElementById("event_list");
+    eventList.appendChild(eventItem);
   }
 }
 
-// Add event listener to the "Add" button
-document.getElementById("add_event").addEventListener("click", addEvent);
+// Add event listener to the "Add Event" button
+var addEventButton = document.getElementById("add_event");
+addEventButton.addEventListener("click", addEvent);
 
-// Get the user's name
-var userName = prompt("Enter your name:");
+// Update clocks every second
+function updateClocks() {
+  var newYorkClock = document.getElementById("new_york_clock");
+  var londonClock = document.getElementById("london_clock");
+  var tokyoClock = document.getElementById("tokyo_clock");
 
-// Update the user name in the calendar header
-document.getElementById('user_name').textContent = userName;
+  var now = new Date();
 
-// Add JavaScript to toggle the active class on the navbar
-const hamburger = document.querySelector('.hamburger');
-const navbar = document.querySelector('.navbar');
+  // Update New York clock
+  var newYorkTime = now.toLocaleTimeString("en-US", { timeZone: "America/New_York" });
+  newYorkClock.textContent = newYorkTime;
 
-hamburger.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-});
+  // Update London clock
+  var londonTime = now.toLocaleTimeString("en-US", { timeZone: "Europe/London" });
+  londonClock.textContent = londonTime;
+
+  // Update Tokyo clock
+  var tokyoTime = now.toLocaleTimeString("en-US", { timeZone: "Asia/Tokyo" });
+  tokyoClock.textContent = tokyoTime;
+
+  // Update analog clocks
+  var hourHand = document.querySelectorAll(".hour-hand");
+  var minuteHand = document.querySelectorAll(".minute-hand");
+  var secondHand = document.querySelectorAll(".second-hand");
+
+  var secondsRatio = now.getSeconds() / 60;
+  var minutesRatio = (secondsRatio + now.getMinutes()) / 60;
+  var hoursRatio = (minutesRatio + now.getHours()) / 12;
+
+  hourHand.forEach(function (hand) {
+    hand.style.transform = `translate(-50%, -100%) rotate(${hoursRatio * 360}deg)`;
+  });
+
+  minuteHand.forEach(function (hand) {
+    hand.style.transform = `translate(-50%, -100%) rotate(${minutesRatio * 360}deg)`;
+  });
+
+  secondHand.forEach(function (hand) {
+    hand.style.transform = `translate(-50%, -100%) rotate(${secondsRatio * 360}deg)`;
+  });
+}
+
+setInterval(updateClocks, 1000);
+

@@ -6,47 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <title>MainPage</title>
 </head>
 <body>
     <header>
+      <div class="header-content">
         <div class="logo">
           <img src="Captura de pantalla 2023-06-04 a las 15.48.12.png" alt="Your App Logo">
         </div>
-        <section class="banner">
-          <video src="system_-_697 (720p).mp4" autoplay muted loop></video>
-        </section>
-        
-        <nav class="navbar">
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul class="menu">
-            <li><a href="home.html">Home</a></li>
-            <li><a href="#">Matches</a></li>
-            <li><a href="#">Recommendations</a></li>
-            <li><a href="#">Networking</a></li>
-            <li><a href="#">Event Spaces</a></li>
-            <li><a href="#">Forums</a></li>
-            <li><a href="#">Agenda</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Follow-ups</a></li>
-            <li><a href="#">Analytics</a></li>
-          </ul>
-          <div class="overlay"></div>
-        </nav>
-        
-        
+        <h1 class="company-name">EventProXperience</h1>
+      </div>
+      <div class="video-section">
+        <video src="system_-_697 (720p).mp4" autoplay muted loop></video>
+      </div>
+      <nav class="navbar">
+        <ul class="menu">
+          <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#"><i class="fas fa-heart"></i> Matches</a></li>
+          <li><a href="#"><i class="fas fa-lightbulb"></i> Recommendations</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Networking</a></li>
+          <li><a href="#"><i class="fas fa-building"></i> Event Spaces</a></li>
+          <li><a href="#"><i class="far fa-calendar-alt"></i> Agenda</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle"><i class="fas fa-ellipsis-h"></i> More</a>
+            <ul class="dropdown-content" id="moreDropdown">
+              <li><a href="#"><i class="fas fa-comments"></i> Follow-ups</a></li>
+              <li><a href="#"><i class="fas fa-chart-bar"></i> Analytics</a></li>
+              <li><a href="#"><i class="fas fa-comments"></i> Forums</a></li>
+              <li><a href="#"><i class="far fa-user"></i> Profile</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav> 
     </header>
-    <div class="container">
-      <div class="calendar light">
-        <div class="calendar_header">
-          <h1 class="header_title">Welcome Back, <span id="user_name"></span></h1>
-          <p class="header_copy">Daily Plan</p>
-        </div>
+    <div class="container calendar-section">
+      <div class="container">
+        <div class="calendar light">
+          <div class="calendar_header">
+            <h1 class="header_title">Welcome Back, <span id="user_name"></span></h1>
+            <p class="header_copy">Daily Plan</p>
+          </div>
           <div class="calendar_plan">
             <div class="cl_plan">
               <div class="cl_title">Today</div>
@@ -58,13 +59,22 @@
           </div>
           <div class="calendar_events">
             <p class="ce_title">Upcoming Events</p>
-            <div id="event_list">
-              <!-- Existing events will be dynamically added here -->
-            </div>
+            <div id="event_list"></div>
+          </div>
+          <div class="digital-clocks">
+            <div id="new_york_clock" class="digital-clock"></div>
+            <div id="london_clock" class="digital-clock"></div>
+            <div id="tokyo_clock" class="digital-clock"></div>
           </div>
         </div>
+      </div>
     </div>
+   
+   
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
+    

@@ -1,244 +1,215 @@
-/* styles.css */
-
-header {
+.header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
   background-color: #f0f0f0;
+  padding: 20px;
 }
+
+.header-content {
+  margin-bottom: 20px;
+}
+
+.company-name {
+  font-size: 80px;
+  font-weight: bold;
+  color: #5e2f9e; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.video-section {
+  width: 100%;
+}
+
+.logo {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  margin-right: 10px;
+  width: 90px; 
+  height: 60px; 
+  }
+
 
 .logo img {
-  width: 200px; /* Adjust the size as needed */
-  padding: 100px;
+  max-width: 150px;
+  height: auto;
 }
+
+
 .navbar {
-  position: relative;
-  background: #333;
-  color: #fff;
-}
-
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
   padding: 10px;
-}
-
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  margin-bottom: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Start with the menu off-screen */
-  width: 250px;
-  height: 100vh;
-  padding: 20px;
-  background: #12b9ea;
-  transition: left 0.3s ease;
+  list-style-type: none;
+  display: flex;
 }
 
 .menu li {
-  margin-bottom: 15px;
+  margin-right: 15px;
 }
 
 .menu li a {
-  color: #fff;
   text-decoration: none;
+  color: #01bcf0;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -1;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+.menu li a:hover {
+  background-color: #5e2f9e;
 }
 
-/* Add styles to show the menu and overlay when the hamburger is clicked */
-.navbar.active .menu {
-  left: 0;
+.menu li:last-child {
+  margin-right: 0;
 }
 
-.navbar.active .overlay {
-  z-index: 1;
-  opacity: 1;
-  pointer-events: auto;
+.dropdown-content.show {
+  display: block;
 }
 
-
-.banner {
+.dropdown {
   position: relative;
-  height: 400px; /* Adjust the height as needed */
 }
 
-.banner video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.overlay {
+.dropdown-content {
+  display: none;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
-  color: #fff;
+  background-color: #f0f0f0;
+  min-width: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-.overlay h1 {
-  font-size: 36px; /* Adjust the font size as needed */
-  text-align: center;
+.dropdown-toggle::after {
+  content: "\25BE";
+  margin-left: 5px;
 }
 
-/* Calendar styles */
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #363b41;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
 
-body {
-  background-color: #fafafa;
+.dropdown-content a:hover {
+  background-color: #e0e0e0;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+
+  .menu li {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .menu li:last-child {
+    margin-right: 0;
+  }
 }
 
 .container {
-  margin: 100px auto;
-  width: 809px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
 }
-
-.light {
-  background-color: #fff;
-}
-
-.dark {
-  margin-left: 65px;
-}
-
-.calendar {
-  width: 370px;
-  box-shadow: 0px 0px 35px -16px rgba(0, 0, 0, 0.75);
-  font-family: 'Roboto', sans-serif;
-  padding: 20px 30px;
-  color: #363b41;
-  display: inline-block;
+.container.calendar-section {
+  background-color: #ecd8f1;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .calendar_header {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  background-color: #5e2f9e;
+  color: #fff;
+  border-radius: 5px 5px 0 0;
 }
 
-.header_copy {
-  color: #A39D9E;
-  font-size: 20px;
+.calendar_header .header_title {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .calendar_plan {
-  margin: 20px 0 40px;
-}
-
-.cl_plan {
-  width: 100%;
-  height: 140px;
-  background-image: linear-gradient(-222deg, #FF8494, #ffa9b7);
-  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
-  padding: 30px;
-  color: #fff;
-}
-
-.cl_title {
-  /* Add your styles here */
-}
-
-.cl_copy {
-  font-size: 20px;
-  margin: 20px 0;
-  display: inline-block;
-}
-
-.cl_add {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  padding: 20px;
   background-color: #fff;
-  cursor: pointer;
-  margin: 0 0 0 65px;
-  color: #c2c2c2;
-  padding: 11px 13px;
+  margin-bottom: 20px;
 }
 
 .calendar_events {
-  color: #12b9ea;
-}
-
-.ce_title {
-  font-size: 14px;
-}
-
-.event_item {
-  margin: 18px 0;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.event_item:hover {
-  background-image: linear-gradient(-222deg, #FF8494, #ffa9b7);
-  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
-}
-
-.event_item:hover .ei_Dot {
+  padding: 20px;
   background-color: #fff;
+  border-radius: 5px;
 }
 
-.event_item:hover .ei_Copy,
-.event_item:hover .ei_Title {
-  color: #f33fa5;
+.calendar_events .ce_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.ei_Dot,
-.ei_Title {
-  display: inline-block;
+.digital-clocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
-.ei_Dot {
-  border-radius: 50%;
+.digital-clock {
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+
+.calendar.light .event_item {
+  margin: 0px ;
+  padding: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #f6f1f7;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar.light .ei_Dot {
   width: 10px;
   height: 10px;
-  background-color: #A39D9E;
-  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  background-color: #ff5851;
+  margin-right: 10px;
 }
 
-.dot_active {
-  background-color: #FF8494;
-}
 
-.ei_Title {
-  margin-left: 10px;
-  color: #363b41;
-}
-
-.ei_Copy {
-  font-size: 12px;
-  margin-left: 27px;
-}
-.delete_button {
-  background-color: #fff;
-  border: none;
-  color: #c2c2c2;
-  cursor: pointer;
-  font-size: 12px;
-  padding: 4px 8px;
-  margin-left: 10px;
-}
 
